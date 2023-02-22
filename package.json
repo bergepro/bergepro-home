@@ -1,0 +1,31 @@
+{
+  "name": "bergepro-home",
+  "version": "1.0.0",
+  "description": "Berge.pro",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next dev -H 0.0.0.0",
+    "build": "next build",
+    "prettier": "prettier -write .",
+    "lint": "next lint"
+  },
+  "keywords": [],
+  "author": "Morten Berge<morten@berge.pro>",
+  "license": "UNLICENSED",
+  "dependencies": {
+    "@chakra-ui/icons": "^2.0.17",
+    "@chakra-ui/react": "^2.5.1",
+    "@emotion/react": "^11.10.6",
+    "@emotion/styled": "^11.10.6",
+    "framer-motion": "^9.0.4",
+    "next": "^13.1.6",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.34.0",
+    "eslint-config-next": "^13.1.6",
+    "prettier": "2.8.4"
+  }
+}
