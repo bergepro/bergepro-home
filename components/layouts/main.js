@@ -1,15 +1,14 @@
-import Head from 'next/head'
-import dynamic from 'next/dynamic'
-import NavBar from '../navbar'
-import { Box, Container } from '@chakra-ui/react'
-import Footer from '../footer'
-import GhostLoader from '../ghost-loader'
-import Boo from '../../lib/Boo_glb'
-const LazyGhost = dynamic(() => import('../ghost'), {
-  ssr: false,
-  loading: () => <GhostLoader />
-})
+import Head from "next/head";
+import dynamic from "next/dynamic";
+import NavBar from "../navbar";
+import { Box, Container } from "@chakra-ui/react";
+import Footer from "../footer";
+import GhostLoader from "../ghost-loader";
 
+const LazyGhost = dynamic(() => import("../ghost"), {
+  ssr: false,
+  loading: () => <GhostLoader />,
+});
 
 const Main = ({ children, router }) => {
   return (
@@ -31,14 +30,13 @@ const Main = ({ children, router }) => {
       <NavBar path={router.asPath} />
 
       <Container maxW="container.md" pt={14}>
-        
         <LazyGhost />
         {children}
 
         <Footer />
       </Container>
     </Box>
-  )
-}
+  );
+};
 
-export default Main
+export default Main;
