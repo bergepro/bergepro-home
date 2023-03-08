@@ -1,32 +1,20 @@
-import { useState, useEffect, useRef, useCallback } from 'react'
-import * as THREE from 'three'
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
-import { loadGLTFModel } from '../lib/model'
-import { GhostSpinner, GhostContainer } from './ghost-loader'
+import { Stats, OrbitControls, Circle } from "@react-three/drei";
+import { Canvas, useLoader } from "@react-three/fiber";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
 
-function easeOutCirc(x) {
-  return Math.sqrt(1 - Math.pow(x - 1, 4))
-}
-
-const VoxelGhost = () => {
-  const refContainer = useRef()
-  const [loading, setLoading] = useState(true)
-  const refRenderer = useRef()
-  const handleWindowResize = useCallback(() => {
-    const { current: renderer } = refRenderer
-    const { current: container } = refContainer
-    if (container && renderer) {
-      const scW = container.clientWidth
-      const scH = container.clientHeight
-
-      renderer.setSize(scW, scH)
-    }
-  }, [])
-
+export default function App() {
+  const gltf = useLoader(GLTFLoader, "./models/boo_glb.glb");
 
   return (
-    <GhostContainer ref={refContainer}>{loading && <GhostSpinner />}</GhostContainer>
-  )
-}
+    <Canvas camera={{ position: [-0.5, 1, 5] }}>
+      <directionalLight position={[3.3, 1.0, 4.4]} />
+      <primitive
+        object={gltf.scene}
+        position={[0, 2.5, 0]}
+        children-0-castShadow
+      />
 
-export default VoxelGhost
+      <Stats />
+    </Canvas>
+  );
+}
