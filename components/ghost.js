@@ -28,7 +28,7 @@ const VoxelGhost = () => {
     const { current: container } = refContainer;
     if (container) {
       const scW = container.clientWidth;
-      const scH = container.clientHeight;
+      const scH = container.clientHeight - 150;
 
       const renderer = new THREE.WebGLRenderer({
         antialias: true,
