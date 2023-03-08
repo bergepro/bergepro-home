@@ -2,8 +2,6 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import { GhostSpinner, GhostContainer } from "./ghost-loader";
-import { useLoader } from "@react-three/fiber";
-import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { loadGLTFModel } from "../lib/model";
 function easeOutCirc(x) {
   return Math.sqrt(1 - Math.pow(x - 1, 4));
