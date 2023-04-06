@@ -1,4 +1,4 @@
-import NextLink from 'next/link'
+import NextLink from "next/link";
 import {
   Link,
   Container,
@@ -9,18 +9,18 @@ import {
   List,
   ListItem,
   useColorModeValue,
-  chakra
-} from '@chakra-ui/react'
-import { ChevronRightIcon, EmailIcon } from '@chakra-ui/icons'
-import Paragraph from '../components/paragraph'
-import { BioSection, BioYear } from '../components/bio'
-import Layout from '../components/layouts/article'
-import Section from '../components/section'
-import Image from 'next/image'
+  chakra,
+} from "@chakra-ui/react";
+import { ChevronRightIcon, EmailIcon } from "@chakra-ui/icons";
+import Paragraph from "../components/paragraph";
+import { BioSection, BioYear } from "../components/bio";
+import Layout from "../components/layouts/article";
+import Section from "../components/section";
+import Image from "next/image";
 
 const ProfileImage = chakra(Image, {
-  shouldForwardProp: prop => ['width', 'height', 'src', 'alt'].includes(prop)
-})
+  shouldForwardProp: (prop) => ["width", "height", "src", "alt"].includes(prop),
+});
 
 const Home = () => (
   <Layout>
@@ -30,13 +30,12 @@ const Home = () => (
         mb={6}
         p={3}
         textAlign="center"
-        bg={useColorModeValue('whiteAlpha.500', 'whiteAlpha.200')}
-        css={{ backdropFilter: 'blur(10px)' }}
+        bg={useColorModeValue("whiteAlpha.500", "whiteAlpha.200")}
+        css={{ backdropFilter: "blur(10px)" }}
       >
         Hello, I&apos;m an developer from Haugesund, Norway!
       </Box>
-
-      <Box display={{ md: 'flex' }}>
+      <Box display={{ md: "flex" }}>
         <Box flexGrow={1}>
           <Heading as="h2" variant="page-title">
             Morten Berge
@@ -69,14 +68,14 @@ const Home = () => (
           </Box>
         </Box>
       </Box>
-
       <Section delay={0.1}>
         <Heading as="h3" variant="section-title">
           Work
         </Heading>
         <Paragraph>
-          Hello! I'm Morten. I am currently studying IT and Information systems at USN.
-          This is the page where i'll (hopefully) upload my current projects, and share some information with recruiters.
+          Hello! I&apos;m Morten. I am currently studying IT and Information
+          systems at USN. This is the page where i&apos;ll (hopefully) upload my
+          current projects, and share some information with recruiters.
         </Paragraph>
         <Box align="center" my={4}>
           <Button
@@ -90,7 +89,6 @@ const Home = () => (
           </Button>
         </Box>
       </Section>
-
       <Section delay={0.2}>
         <Heading as="h3" variant="section-title">
           Bio
@@ -99,22 +97,19 @@ const Home = () => (
           <BioYear>1994</BioYear>
           Born in Haugesund, Norway
         </BioSection>
-        
       </Section>
-
       <Section delay={0.3}>
         <Heading as="h3" variant="section-title">
           I ♥
         </Heading>
         <Paragraph>
-          Technology/Coding, Playing bass, Sleek designs, and learning new skills
+          Technology/Coding, Playing bass, Sleek designs, and learning new
+          skills
         </Paragraph>
       </Section>
-
-      
     </Container>
   </Layout>
-)
+);
 
-export default Home
-export { getServerSideProps } from '../components/chakra'
+export default Home;
+export { getServerSideProps } from "../components/chakra";

@@ -1,12 +1,12 @@
-import NextLink from 'next/link'
+import NextLink from "next/link";
 import {
   Box,
   Heading,
   Text,
   Container,
   Divider,
-  Button
-} from '@chakra-ui/react'
+  Button,
+} from "@chakra-ui/react";
 
 const NotFound = () => {
   return (
@@ -15,12 +15,12 @@ const NotFound = () => {
       <Text>The page you&apos;re looking for was not found.</Text>
       <Divider my={6} />
       <Box my={6} align="center">
-        <Button as={NextLink} href="/" colorScheme="teal">
-          Return to home
-        </Button>
+        <NextLink href="/" passHref>
+          <Button colorScheme="teal">Return to home</Button>
+        </NextLink>
       </Box>
     </Container>
-  )
-}
+  );
+};
 
-export default NotFound
+export default NotFound;
