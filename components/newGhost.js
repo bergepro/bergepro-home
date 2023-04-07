@@ -12,8 +12,6 @@ const VoxelGhost = () => {
   const refContainer = useRef();
   const [loading, setLoading] = useState(true);
   const refRenderer = useRef();
-  const ghostLoader = useLoader(GLTFLoader, "/models/boo_glb.glb");
-
   const handleWindowResize = useCallback(() => {
     const { current: renderer } = refRenderer;
     const { current: container } = refContainer;

@@ -6,9 +6,16 @@ import Chakra from "../components/chakra";
 if (typeof window !== "undefined") {
   window.history.scrollRestoration = "manual";
 }
-
+function SafeHydrate({ children }) {
+  return (
+    <div suppressHydrationWarning>
+      {typeof window === 'undefined' ? null : children}
+    </div>
+  )
+}
 function Website({ Component, pageProps, router }) {
   return (
+    <SafeHydrate>
     <Chakra cookies={pageProps.cookies}>
       <Fonts />
       <Layout router={router}>
@@ -25,6 +32,7 @@ function Website({ Component, pageProps, router }) {
         </AnimatePresence>
       </Layout>
     </Chakra>
+    </SafeHydrate>
   );
 }
 
